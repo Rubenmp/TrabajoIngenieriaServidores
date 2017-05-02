@@ -1,0 +1,29 @@
+
+- Vídeos
+-- Introducción
+  Outcompete with the IBM z13s secure cloud server
+  https://www.youtube.com/watch?v=rVskLrzdNlA
+
+  IBM Mainframe: Make the Extraordinary Possible
+  https://www.youtube.com/watch?v=4-kDwmD4CcM&list=PL631mUZUtnt7fkDEFExG0Tp1gXyD0bZFu
+
+-- Explicativos
+  The IBM z13s & z13 hardware and software stack explained
+  https://www.youtube.com/watch?v=edDx2L71yR0
+
+  IBM talks Blockchain at InterConnect 2016
+  https://www.youtube.com/watch?v=8xBrjf05b-w
+
+  IBM Watson: How it Works
+  https://www.youtube.com/watch?v=_Xcmh1LQB9I&index=5&list=PL631mUZUtnt7fkDEFExG0Tp1gXyD0bZFu
+
+  How It Works: IBM Watson Health
+  https://www.youtube.com/watch?v=ZPXCF5e1_HI&index=8&list=PL631mUZUtnt7fkDEFExG0Tp1gXyD0bZFu
+
+  IBM Smarter Videos: https://www.youtube.com/playlist?list=PLlUE3xu9JiOqyFy9Mvvh7MGs_4eFRXOeG
+
+
+
+- Documentación
+  IBM Bluemix Virtual Servers
+  https://www.ibm.com/marketplace/search/mx/es-mx?terms=ibm+z+server
