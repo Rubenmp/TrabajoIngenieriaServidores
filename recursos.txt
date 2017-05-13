@@ -1,4 +1,3 @@
-
 - Vídeos
 -- Introducción
   Outcompete with the IBM z13s secure cloud server
@@ -27,3 +26,26 @@
 - Documentación
   IBM Bluemix Virtual Servers
   https://www.ibm.com/marketplace/search/mx/es-mx?terms=ibm+z+server
+
+IBM z Systems literature
+https://www-01.ibm.com/common/ssi/apilite?infotype=PM&infosubt=AB&doctype=C0_CST%20and%20XZS_*&pubno=*USEN,*WWEN&lastdays=1825&appname=STG_ZS_USEN_AB&additional=summary&contents=keeponlit
+
+IBM Technical Computing literature
+https://www-01.ibm.com/common/ssi/apilite?infotype=PM&infosubt=SP&doctype=M0_DST%20and%20XDC_*&pubno=*USEN&lastdays=1825&ctvwcode=US&appname=STGE_DC_DC_USEN_SP&additional=summary&contents=keeponlit
+
+IBM Power Systems literature
+https://www-01.ibm.com/common/ssi/apilite?infotype=PM&infosubt=SP&doctype=M0_DST%20and%20XPO*&pubno=*USEN&lastdays=1825&ctvwcode=US&appname=STGE_PO_PO_USEN_SP&additional=summary&contents=keeponlit
+
+IBM Storage Literature
+https://www-01.ibm.com/common/ssi/apilite?infotype=PM&infosubt=BR&doctype=M0_BRB%20and%20XTS_DSX&pubno=*USEN&lastdays=1825&ctvwcode=US&appname=STGE_TS_DS_USEN_BR&additional=summary&contents=keeponlit
+
+IBM Systems literature
+https://www-01.ibm.com/common/ssi/apilite?infotype=PM&infosubt=BR&doctype=XXB_XBX%20OR%20XXB_SWXor%20XSW_SWX&pubno=*USEN,*WWEN&lastdays=1825&ctvwcode=US&appname=STGE_XB_XB_USEN_BR&additional=summary&contents=keeponlit
+
+IBM Global Financing Literature
+https://www-01.ibm.com/common/ssi/apilite?infotype=SA&infosubt=WH&doctype=P0_OPR%20and%20XGF_*&pubno=*USEN,*CAEN,*CAFR&lastdays=1825&appname=IGF_EXT_USEN_CR&additional=summary&contents=keeponlit
+
+Watson Internet of Things
+https://www-01.ibm.com/common/ssi/apilite?infotype=PM&infosubt=AB&doctype=XWW_WWX%20or%20XWW_WYX%20or%20XWW_WZX%20or%20XWW_WTX&pubno=*USEN&lastdays=1825&appname=WTIE_WW_WW_USEN_CS&additional=summary&contents=C0_CST%20and%20keeponlit
+https://www.ibm.com/watson/products.html
+https://www.ibm.com/watson/
