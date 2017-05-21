@@ -29,6 +29,7 @@
 
 IBM z Systems literature
 https://www-01.ibm.com/common/ssi/apilite?infotype=PM&infosubt=AB&doctype=C0_CST%20and%20XZS_*&pubno=*USEN,*WWEN&lastdays=1825&appname=STG_ZS_USEN_AB&additional=summary&contents=keeponlit
+https://www.redbooks.ibm.com/redbooks/pdfs/sg246366.pdf
 
 IBM Technical Computing literature
 https://www-01.ibm.com/common/ssi/apilite?infotype=PM&infosubt=SP&doctype=M0_DST%20and%20XDC_*&pubno=*USEN&lastdays=1825&ctvwcode=US&appname=STGE_DC_DC_USEN_SP&additional=summary&contents=keeponlit
