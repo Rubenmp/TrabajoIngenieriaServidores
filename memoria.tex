@@ -185,7 +185,7 @@ Algunas de estas áreas serían búsqueda y recuperación de información (IR), 
 \begin{figure}[H]
 	\centering
 	\label{j-watson}
-	\includegraphics[width=0.7\textwidth]{./Imagenes/j-watson.jpg}
+	\includegraphics[width=0.8\textwidth]{./Imagenes/j-watson.jpg}
 	\caption{Watson en Jeopardy!}
 \end{figure}
 
@@ -232,7 +232,8 @@ En dicho proceso se le da valor al hecho de que una respuesta concuerde con el t
 También se tienen en cuenta fechas, geografía, la fiabilidad de las fuentes, etc.
 Este análisis produce cientos de valores o características, cada uno indicando el grado de evidencia que se ha encontrado de cada tipo que refuerza una respuesta concreta.
 Todas esas características deben ser combinados para obtener un único valor representando la probabilidad de que la respuesta sea correcta.
-Para dar una ponderación a cada característica de DeepQA se entrenó con un modelo estadístico usando machine learning a partir de preguntas y respuestas
+Para dar una ponderación a cada característica de DeepQA se entrenó con un modelo estadístico usando machine learning a partir de preguntas y respuestas.
+% this-is-watson: [37]
 El resultado final es una lista de respuestas candidatas, cada una con un valor que nos indica si es buena respuesta o no, en función de la evidencia.
 
 \
@@ -277,169 +278,57 @@ Si usted está de pie, es la dirección que debe buscar para ver el revestimient
 \textbf{Respuesta}: Abajo
 \end{center}
 
+\
 
+Para clasificar las respuestas se usó un sistema dinámico que tenía en cuenta el contexto de la pregunta, su nombre es \textit{coacción de tipo}. % this-is-watson: [24, 27]
+Otras técnicas técnicas usadas por Watson eran PRISMATIC, YAGO y WordNet. % this-is-watson [21, 25, 26]
+Otra fase del proceso es \textbf{recolectar y evaluar la evidencia} (o refutación) acerca de las respuestas. 
+Cada una de las búsquedas de evidencia se puede procesar paralelamente.
+% this-is-watson: extracción dinámica de tipos [29]
+En la búsqueda de tipos se utiliza la deducción de relaciones a partir de datos de entrenamiento de los que se extraen relaciones semánticas. Por ejemplo, esta pregunta de la categoría \textit{Madres e hijos}:
+
+\begin{center}
+Aunque solo les separa un año de vida, ella interpretó a la madre de Colin Farrell en Alexander
+
+\textbf{Respuesta}: Angelina Jolie
+
+\textbf{Relación}: protagoniza(ella, Alexander)
+\end{center}
 
 \
 
-\begin{comment}
-We employ
-dynamic and flexible techniques for classifying candidate
-answers, heavily relying on the context in the question.
-For this, we developed a technique we called type coercion
-[24]. Type coercion radically differs from earlier systems
-(such as PIQUANT) that statically classify a possible answer
-on the basis of a preexisting set of types
+En Jeopardy! hay preguntas que tienen referencias implícitas en la frase, y unas partes del enunciado pueden depender de otras, como en el siguiente ejemplo de la categoría \textit{Antes y después}:
 
-Watson uses an extensible ensemble
-of techniques based on a wide variety of textual and
-ontological resources, including PRISMATIC [21], YAGO
-[25], and WordNet** [26].
+\begin{center}
+La estrella de Jerry Maguire que mantiene automáticamente la velocidad de tu vehículo
 
-In the next paper,
-in the issue, BTyping Candidate Answers using Type
-Coercion,[ Murdock et al. [27] discuss the type coercion
-techniques developed for Watson that provide the dynamic
-classification necessary for dealing with the huge variety of
-contextual types used in Jeopardy!.
+\textbf{Respuesta}: Control Tom Cruise
+\end{center} 
 
--- Collecting and scoring evidence
-These algorithms are designed to produce a
-confidence scoreVa number that indicates the degree to
-which a piece of evidence supports or refutes the correctness
-of a candidate answer.
-Multiple evidence scorers can work
-in parallel for each candidate answer and over different
-forms of evidence
+Hay una serie de algoritmos que primero detectan este tipo de preguntas y las referencias enlazadas en las frases.
+Hay veces que interesa conocer la relación entre varias entidades, o aquello que tienen en común.
+Para interpretar las preguntas se dividen en distintas partes lógicas que puedan ser exploradas independientemente y combinar los resultados. % this-is-watson: [36]
+Por ejemplo, en esta pregunta con categoría \textit{Animales ficticios}, el sistema puede buscar por un lado personajes introducidos en $1894$ y por otro 
 
-In BRelation Extraction and Scoring
-in DeepQA,[ Wang et al. [29] present two approaches
-to broad-domain relation extraction and scoring: one
-based on manual pattern specification (rule based) and
-the other relying on statistical methods for pattern elicitation,
-which uses a novel transfer learning technique, relation
-topics.
+\begin{center}
+El nombre de este personaje, introducido en $1894$, proviene de $"$Hindi for bear$"$
 
-(approximately 30). Statistical approaches, on the other hand,
-automatically learn how to extract semantic relations from
-training data, which may be collected semiautomatically
-and were trained to detect occurrences of a large number
-of relations (approximately 7,000).
+\textbf{Respuesta}: Baloo
+\end{center}
 
-MOTHERS & SONS: Though only separated by one
-year in real life, she played mother to son Colin Farrell
-in BAlexander.[ (Answer: BAngelina Jolie[)
-Relation: starring (she, BAlexander[)
-Although structured resources tend to be too narrow and
-brittle to directly and confidently answer questions, several
-components in DeepQA do use structured data
+\
 
---Puzzles, Final Jeopardy!, and other Special Questions
+Para poder ser operativo en un juego, el sistema debe mejorar las $2$ horas de procesamiento que necesita para responder una pregunta (en $2008$).
+El $UIMA-AS$ permite a cualquier aplicación $UIMA$ ser desplegada en una colección de procesos asíncronos que usan paso de mensajes para comunicarse.
+Cada pregunta se interpreta en un determinado número de preguntas candidatas, cada una se ejecuta independientemente, cada respuesta potencial de una pregunta candidata se ejecuta independientemente, y cada parte de evidencia también.
+Tras usar $2880$ procesadores la latencia de respuesta bajó de dos horas a tres segundos. % this-is-watson [39]
 
-BEFORE & AFTER: The BJerry Maguire[ star who
-automatically maintains your vehicle’s speed.
-(Answer: BTom Cruise control[)
+\
 
-Special Questions are handled by a collection of algorithms
-designed to first detect their occurrence
-
-Missing links
-Realizing and resolving implicit relationships and using
-them to interpret language and to answer questions is
-generally useful and appears in different forms in Jeopardy!
-the ability to find what different
-concepts have in common can help in many areas, including
-relating symptoms to diseases
-
--- Breaking the question down
-breaking a question down into logical subparts, so that the
-subparts may be independently explored and the results
-combined to produce the answer [36]
-
-For example, in the clue below,
-the system can independently find characters introduced
-in 1894 and then words that come from Hindi for Bbear.[
-
-FICTIONAL ANIMALS: The name of this character,
-introduced in 1894, comes from the Hindi for Bbear.[
-(Answer: BBaloo[)
-
---Merging evidence and combining confidence
-For each of these answers, it may find
-100 pieces of evidence in the form of paragraphs or facts
-from databases. Each evidence-answer pair may be scored by
-100 independent scorers.
-
-Its job is to figure out the best way to combine
-the confidence of many different scorers across different
-pieces of evidence to produce a single probability for
-each candidate answer.
-This is done using a statistical
-machine learning framework
-normalization,
-training with sparse training data, and merging related or
-equivalent candidate answers.
-Because machine learning is used
-to weigh and combine scores, evidence scoring algorithms
-can be easily introduced, revised, and reconfigured [37]
-
--- Massive parallelism, scale-out, and speed
+Este sistema de pregunta-respuesta es estático y no aprovecha todo el potencial de la arquitectura DeepQA.
+Watson puede aplicarse a la salud modificando su base de conocimiento y enseñándole a hacer las preguntas adecuadas a los pacientes para obtener información sobre ellos e inferir una solución a partir de su historial médico.
 
 
-- Planning for success required that we begin to consider latencyVthe
-time it took to answer a question.
-Watson would have to produce
-its best answer and confidence estimation in an average of
-about three seconds
-At the end of 2008, DeepQA took about
-two hours of CPU time to answer a Jeopardy! question,
-running on a single 2.6-GHz processor with 16 GB of
-memory.
-UIMA-AS
-allows any UIMA application to be deployed as a collection
-of asynchronous processes that use standard messaging
-infrastructure to communicate.
-Each can be independently
-scaled up, as needed, by deploying multiple instances of
-the process on a larger number of machines.
-
-First, each search query
-could be independently executed. Subsequently, each
-candidate answer could start a new independent thread of
-processing, where each piece of evidence for each candidate
-answer, could be independently scored
-
-DeepQA was scaled out using UIMA-AS
-using 2,880 processors to drive the QA latency down from
-two hours to three seconds. [39]
-
--- Watson: An artificial Jeopardy! contestant
-DeepQA refers to the architecture and implementation of a
-system that takes a question and a category as input and
-provides a ranked list of answers.
-Each answer is associated
-with probabilities that the answer is correct, based on
-analyzed evidence.
-
-1Decides which clues to select when Watson has control of
-the board.
-2Determines what to bet on Daily Doubles and on Final
-3Determines a confidence threshold below which Watson
-will not buzz in (even if it could) and above which
-Watson will attempt to buzz in.
-
-
-Watson into healthcare, we plan to move from taking
-specific questions as input to analyzing entire problem
-scenarios, represented, for example, by a patient’s electronic
-medical record.
-We imagine Watson 2.0 will support
-mixed-initiative dialogue that extends over time as a problem
-case is explored. This will allow the system to more
-efficiently prune its search by gathering specific information
-from the user.
-
-
-\end{comment}
 
 
 \section{Conclusiones}
