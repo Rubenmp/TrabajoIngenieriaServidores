@@ -109,7 +109,7 @@
 \normalfont \normalsize 
 \textsc{\textbf{Ingeniería de Servidores (2016-2017)} \\ Grado en Ingeniería Informática \\ Universidad de Granada} \\ [25pt] % Your university, school and/or department name(s)
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge IBM mainframes \\ Watson Machine Learning \\ % The assignment title
+\huge IBM mainframes \\ Machine Learning \& Watson \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
@@ -173,6 +173,10 @@ El primer ordenador digital de propósito general de IBM fue ASCC (\href{https:/
 
 
 \subsection{IBM mainframes}
+Usaremos la siguiente definición de mainframe
+\begin{center}
+	$"$Un mainframe es lo que las empresas usan para alojar bases de datos comerciales, servidores de transacciones y aplicaciones que requieren un mayor grado de seguridad y disponibilidad de lo que comúnmente se encuentra en máquinas de menor escala$"$ \cite{ibm-mainframes}
+\end{center}
 A día de hoy, los mainframes juegan un papel esencial en las operaciones diarias de las grandes compañías.
 La era de la información reclama muchas innovaciones, y las grandes compañías son víctimas en la marcha implacable del progreso.
 IBM desarrolla continuamente sus mainframes al mismo tiempo que mantiene la compatibilidad con aplicaciones existentes.
@@ -203,12 +207,48 @@ Una arquitectura puede descomponerse recursivamente en partes que interactúan a
 A principios de los 90 el modelo cliente/servidor, con nodos distribuidos de computadoras menos potentes, emergió para desafiar el dominio de las computadoras mainframe.
 La industria en estos momentos comenzó a llamar a los mainframes dinosaurios.
 Entonces los diseñadores crearon nuevos mainframe, llamados T-Rex, para satisfacer la demanda.
-Algunos de los servicios que ofrecía dicho mainframe eran el servicio web, mayor autonomía, recuperación ante desastres y grid computing
+Algunos de los servicios que ofrecía dicho mainframe eran el servicio web, mayor autonomía, recuperación ante desastres y grid-computing.
+Grid-computing hace referencia al uso simultáneo de diferentes recursos hardware y software de forma que cumpla varias características \cite{grid-def}:
+\begin{itemize}
+	\item Coordinar recursos de forma descentralizada
+	\item Usar protocolos e interfaces estándares, abiertos y de propósito general
+	\item Ofrecer un servicio no trivial
+\end{itemize}
 
+\begin{figure}[H]
+	\centering
+	\label{grid-c}
+	\includegraphics[width=0.4\textwidth]{./Imagenes/grid-c.png}
+	\caption{Grid computing \cite{grid-c-image}}
+\end{figure}
 
+Este tipo de computación forma los cimientos del Internet que conocemos hoy en día.
+Estos mainframes están diseñados para resistir los virus o comportamientos inadecuados.
 
+% What is a mainframe? It's a style of computing
 
+Hoy en día no siempre se usa el término mainframe, se ha tendido a llamar cualquier computadora de uso comercial, sin importar su tamaño, servidor. 
+El término mainframe se utiliza para los servidores más grandes.
+Una empresa grande puede tener servidores web, de bases de datos, correo o usar un mainframe para hacer varias de estas tareas.
+Cuando se tiene un conjunto de servidores suele hacerse referencia a una granja de servidores.
+La presencia de un mainframe a menudo implica una forma centralizada de computación.
+Cuando usamos un mainframe tenemos mayor flexibilidad y evitamos la necesidad de actualizar varios computadores a la vez, sin embargo, el hecho de tener varios computadores distribuidos aumenta la potencia de cálculo en relación al precio.
+Los mainframes tienen la capacidad de configurarse dinámicamente, añadir procesadores, memoria y conexiones, mientras las aplicaciones continúan ejecutándose.
+Anteriormente se asociaba el término mainframe tanto con el hardware como con el software, pero dejó de tener sentido ya que el software de los grandes servidores ahora también puede ejecutarse en pequeñas computadoras.
+Eso permite desarrollar un programa delicado y probarlo en sistemas pequeños antes de moverlo al sistema de producción.
 
+\
+
+A menudo se utiliza el término plataforma para referirse al hardware y software como conjunto. El mainframe en sí suele cumplir alguna de las siguientes características \cite{ibm-mainframes}:
+\begin{itemize}
+	\item Control centralizado de recursos.
+	\item Compartir acceso disco con otros sistemas, con protección de los datos y control de privilegios.
+	\item Procedimientos sistemáticos para copias de seguridad y recuperación desde otra ubicación alternativa.
+	\item Trabajo rutinario con operaciones simultáneas de E/S.
+	\item Permitir usar varias copias del sistema operativo como un único sistema, dicha tecnología se conoce como \href{https://www-03.ibm.com/systems/z/advantages/pso/}{Parallel Sysplex}, es análogo al concepto de cluster en UNIX.
+	Esto permite controlar mejor las operaciones sobre las aplicaciones.
+	\item Gran capacidad de compartir datos y recursos.
+\end{itemize}
 
 
 
