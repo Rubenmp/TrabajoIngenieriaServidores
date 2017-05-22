@@ -282,10 +282,9 @@ La seguridad de datos se define como protección contra acceso, transferencia, m
 
 
 
-\subsubsection{Blockchain}
 \subsection{Watson}
 En 2007 \href{https://www.research.ibm.com/}{IBM Research} se propuso el reto de crear un sistema para competir con los grandes campeones en el juego \href{https://www.jeopardy.com/}{Jeopardy!}. 
-Este sistema, en adelante Watson, entraría dentro de la categoría QA (Question answering), que requiere avances en varias áreas de la ciencia de la computación y la inteligencia artificial. 
+Este sistema, en adelante Watson, entraría dentro de la categoría QA (Question answering), que engloba varias áreas de la ciencia de la computación y la inteligencia artificial. 
 Algunas de estas áreas serían búsqueda y recuperación de información (IR), procesamiento de lenguaje natural (NLP), representación del conocimiento y razonamiento o el machine learning.
 
 \begin{figure}[H]
@@ -297,9 +296,9 @@ Algunas de estas áreas serían búsqueda y recuperación de información (IR), 
 
 \
 
-La comunicación humana es imperfecta, está llena de ambigüedades, polisemia, ironías, la misma información puede darse de varias maneras y a veces la interpretación de una frase no solamente depende del contexto actual sino de conversaciones anteriores entre los interlocutores.
-Además, dicha comunicación no está estructurada, como en un lenguaje de programación o una base de datos, donde los datos están bien definidos y la información es explícita.
-A día de hoy la información no estructurada, como es el caso del lenguaje natural, crece más rápido que la estructurada, por ello es buena idea usar análisis profundos del lenguaje natural para hacer inferencia a partir de los datos de los que disponemos.
+La comunicación humana es imperfecta, el lenguaje permite ambigüedades, polisemia, la misma información puede expresarse de varias formas, también tenemos ironías y la interpretación de una frase puede depender de conversaciones anteriores entre los interlocutores.
+Además, dicha comunicación no está estructurada (como en un lenguaje de programación o una base de datos), los datos no siempre están bien definidos y hay información implícita.
+A día de hoy la información no estructurada crece más rápido que la estructurada, por ello es buena idea desarrollar el análisis del lenguaje natural y hacer inferencia a partir de los datos de los que disponemos.
 % this-is-watson: word-sense disambiguation [5, 6], latent semantic analysis [7], textual entailment [8], and coreference resolution [9]
 
 \
@@ -311,18 +310,19 @@ Su objetivo es integrar varios programas llamados \textit{anotadores}, que asign
 
 % Watson was the system-level experiment that brought together hundreds of different cooperating algorithms, each of these algorithms alone performs relatively simple language processing tasks.
 % In May 1997, IBM’s Deep Blue* computer beat Gary Kasparov (IBM Research beckoned for an encore)
+\
 
 Algunos desarrolladores habían participado anteriormente en Question answering dentro del proyecto PIQUANT \cite{piquant}. % this-is-watson [13, 14]
-Este sistema tenía un conjunto estático de tipos de respuestas o clases de conceptos que se solicitaban en una pregunta.
-El nuevo sistema no tendría conexión a Internet, y en unos tres segundos tendría que procesar la pregunta, buscar una respuesta y estimar la probabilidad de que sea correcta.
+Este sistema tenía un conjunto estático de tipos de respuestas (o clases de conceptos) que se solicitaban en una pregunta.
+El nuevo sistema no tendría conexión a Internet, y tendría que procesar la pregunta, buscar respuesta y estimar la probabilidad de que sea correcta.
 Tras analizar $2.000$ partidas de \textit{Jeopardy!} la media de los jugadores que ganaban era una precisión del $85-95\%$ de acierto sobre una media de $40-50\%$ de preguntas respondidas, o 
-\textit{85\% Precision@40}
+\textit{85\% Precision@40}.
+En $2007$ se consiguió, usando PIQUANT, un rendimiento \textit{16\% Precision@70} en las preguntas de \textit{Jeopardy!}.
 
 
 \subsubsection{Arquitectura}
-En $2007$ se consiguió, usando PIQUANT, un rendimiento 16\% Precision@70 en las preguntas de \textit{Jeopardy!}.
-Después se desarrollaron dos técnicas esenciales en el desarrollo de \textit{Watson}, DeepQA % this-is-watson: [4]
-y AdaptWatson. % this-is-watson: [16,17]
+Sobre UIMA se desarrollaron dos técnicas esenciales en el desarrollo de \textit{Watson}, la arquitectura DeepQA % this-is-watson: [4]
+y un complemento para integrar distintas técnicas algorítmicas llamado AdaptWatson. % this-is-watson: [16,17]
 
 \begin{figure}[H]
 	\centering
@@ -331,55 +331,54 @@ y AdaptWatson. % this-is-watson: [16,17]
 	\caption{Arquitectura DeepQA}
 \end{figure}
 
-\textbf{DeepQA} define varias etapas del análisis, cada una tiene diferentes implementaciones que se ejecutan en paralelo.  
-Nunca se admite que se ha entendido perfectamente una pregunta, de forma que pueda verse directamente la respuesta en una base de datos.
-Lo que se hace es buscar varias posibles preguntas candidatas, ponderar la probabilidad de que cada una sea la correcta, buscar varias posibles respuestas a cada pregunta y usar diferentes fuentes para ponderar la probabilidad de cada respuesta.
-En dicho proceso se le da valor al hecho de que una respuesta concuerde con el tipo que se espera, por ejemplo un monumento histórico, una persona, etc.
-También se tienen en cuenta fechas, geografía, la fiabilidad de las fuentes, etc.
-Este análisis produce cientos de valores o características, cada uno indicando el grado de evidencia que se ha encontrado de cada tipo que refuerza una respuesta concreta.
-Todas esas características deben ser combinados para obtener un único valor representando la probabilidad de que la respuesta sea correcta.
-Para dar una ponderación a cada característica de DeepQA se entrenó con un modelo estadístico usando machine learning a partir de preguntas y respuestas.
-% this-is-watson: [37]
-El resultado final es una lista de respuestas candidatas, cada una con un valor que nos indica si es buena respuesta o no, en función de la evidencia.
+\textbf{DeepQA} define varias etapas del análisis, cada una tiene diferentes implementaciones que se ejecutan en paralelo y se combinan los resultados.
+No se presupone que se ha entendido una pregunta, de forma que pueda consultarse directamente la respuesta en nuestra base de conocimiento.
+Lo que se hace es generar varias preguntas candidatas, generar varias respuestas por pregunta candidata y estimar la probabilidad de que cada respuesta sea correcta.
 
 \
 
-El rendimiento del sistema no era demasiado alto, hasta que consiguieron integrar diferentes técnicas algorítmicas usando una metodología llamada \textbf{AdaptWatson}.
-Estos componentes actúan sobre la arquitectura de DeepQA con el objetivo de entender las preguntas, buscar respuestas candidatas y ponderar la confianza en dichas respuestas.
-El equipo documentó más de $8.000$ experimentos independientes en el ciclo de vida de Watson, cada uno con $10-20GB$ de datos.
-A partir de estos datos se buscaban fallos y sus posibles causas.
-De esta forma se mejoró hasta un 85\% Precision@70.
+Se le da valor al hecho de que una respuesta concuerde con el tipo que se espera, por ejemplo un monumento histórico, una persona, etc.
+También se tienen en cuenta fechas, geografía, la fiabilidad de las fuentes, etc.
+Este análisis produce cientos de valores o características, cada uno indicando el grado de evidencia dada una respuesta concreta.
+Con esas características se calcula la probabilidad de que una respuesta sea correcta dada una pregunta candidata.
+Para ponderar el valor de cada característica se entrenó un modelo estadístico usando machine learning a partir de preguntas y respuestas anteriores.
+% this-is-watson: [37]
+
+\
+
+El rendimiento del sistema era bajo por lo que se integraron diferentes técnicas algorítmicas y se añadió una metodología llamada \textbf{AdaptWatson}.
+Estos componentes actúan sobre la arquitectura de DeepQA con el objetivo de entender las preguntas, buscar respuestas candidatas y valorar las respuestas.
+El equipo documentó más de $8.000$ experimentos independientes, cada uno con $10-20GB$ de datos.
+A partir de estos datos se buscaban fallos y sus posibles causas, de esta forma se mejoró hasta un \textit{85\% Precision@70}.
 
 \subsubsection{Entendiendo las preguntas}
-Una pregunta tiene un tipo de respuesta potencial que llamaremos LAT (lexical answer type), además cada pregunta en \textit{Jeopardy!} tiene una categoría que ayudará a identificar el tema sobre el que se pregunta. % this-is-watson: question analysis algorithms [18]
+Cada pregunta en \textit{Jeopardy!} tiene una categoría que ayudará a ponderar las respuestas. % this-is-watson: question analysis algorithms [18]
 Para entender las preguntas formuladas se usa un parser ESG (English Slot Grammar) % this-is-watson: [19]
 y un generador PAS (predicate-argument structure). 
 
 \begin{itemize}
 	\item ESG identifica partes de la frase y roles sintácticos como el sujeto y relaciones entre las diferentes partes de la frase.
-	\item El generador PAS es usado para producir una representación abstracta, que representa la interfaz con la parte analítica (otra capa de DeepQA de la resolución del problema.
+	\item El generador PAS crea una representación abstracta, la interfaz con la parte analítica.
 \end{itemize}
 
-En cuanto a las \textbf{respuestas y fuentes de evidencia} al principio se usaba añadieron enciclopedias y libros de referencia. Después se desarrolló un proceso semiautomático para hacer crecer el conocimiento de Watson, no se puede añadir contenido sin parar ya que afecta al rendimiento del sistema.
+Para las \textbf{respuestas y fuentes de evidencia} se añadieron enciclopedias y libros de referencia. Después se desarrolló un proceso semiautomático para aumentar la base de conocimiento, añadir contenido sin parar afecta negativamente al rendimiento del sistema.
 % this-is-watson: proceso para añadir conocimiento [20, 21]
-Tras analizar el contenido que se añade se crea PRISMATIC, que extrae información y usa la estadística para deducir lo que es conocimiento base, esto ayudará en la parte de generación de respuestas candidatas y calcular sus probabilidades.
+Para extraer conocimiento de las fuentes seleccionadas se usa \textit{PRISMATIC} \cite{prismatic}. %*
 % this-is-watson: descubrir respuestas candidatas [22]
 
 \
 
-Cada una de las consultas usan información estructurada y no estructurada usando varios mecanismos de búsqueda complementarios.
-Una pareja de consulta y respuesta representan una hipótesis.
+Cada una de las consultas usa simultáneamente información estructurada y no estructurada .
 % this-is-watson: generación de hipótesis [23]
 Una métrica %(candidate binary recall)
 que se usa para medir la bondad de una respuesta es el porcentaje de preguntas en las que dicha respuesta es generada como candidata. 
-Esta medida ayuda a combinar los resultados, sobre todo cuando tenemos varias interpretaciones diferentes de lo que se está preguntando.
-De esta forma se determina la probabilidad final de que una respuesta sea correcta para la pregunta inicial.
-De las experiencias de los desarrolladores con el sistema PIQUANT sabían que no era una estrategia adecuada intentar anticipar todos los tipos de respuesta y crear algoritmos que busquen solamente instancias de dichas clases.
-Esto es debido en parte a la complejidad de algunas preguntas, ya que todo el sistema se apoya en haber reconocido correctamente el tipo de respuesta necesaria, y que en el conocimiento del sistema dicha respuesta esté bien clasificada.
+Esta medida ayuda sobre todo cuando tenemos varias interpretaciones diferentes de la pregunta.
+De las experiencias con \textit{PIQUANT} se sabía que no era una estrategia adecuada intentar anticipar todos los tipos de respuesta y crear algoritmos que busquen solamente instancias de dichas clases.
+Todo el sistema se apoyaría en reconocer correctamente el tipo de respuesta y que la respuesta esté bien clasificada dentro del sistema.
 En la siguiente pregunta de la categoría \textit{decoración} el tipo de respuesta buscada es una \textit{dirección}:
 
 \begin{center}
-Si usted está de pie, es la dirección que debe buscar para ver el revestimiento.
+\textit{Si usted está de pie, es la dirección que debe buscar para ver el revestimiento.}
 
 \textbf{Respuesta}: Abajo
 \end{center}
@@ -387,14 +386,13 @@ Si usted está de pie, es la dirección que debe buscar para ver el revestimient
 \
 
 Para clasificar las respuestas se usó un sistema dinámico que tenía en cuenta el contexto de la pregunta, su nombre es \textit{coacción de tipo}. % this-is-watson: [24, 27]
-Otras técnicas técnicas usadas por Watson eran PRISMATIC, YAGO y WordNet. % this-is-watson [21, 25, 26]
-Otra fase del proceso es \textbf{recolectar y evaluar la evidencia} (o refutación) acerca de las respuestas. 
-Cada una de las búsquedas de evidencia se puede procesar paralelamente.
+Otras técnicas usadas por Watson eran \textit{YAGO} y \textit{WordNet}. % this-is-watson [21, 25, 26]
+Otra fase del proceso es \textbf{recolectar y evaluar la evidencia} (de forma paralela) de las respuestas. 
 % this-is-watson: extracción dinámica de tipos [29]
-En la búsqueda de tipos se utiliza la deducción de relaciones a partir de datos de entrenamiento de los que se extraen relaciones semánticas. Por ejemplo, esta pregunta de la categoría \textit{Madres e hijos}:
+Aquí se utiliza la deducción de relaciones semánticas a partir de datos de entrenamiento. Por ejemplo, esta pregunta de la categoría \textit{Madres e hijos}:
 
 \begin{center}
-Aunque solo les separa un año de vida, ella interpretó a la madre de Colin Farrell en Alexander
+\textit{Aunque solo les separa un año de vida, ella interpretó a la madre de Colin Farrell en Alexander.}
 
 \textbf{Respuesta}: Angelina Jolie
 
@@ -406,33 +404,55 @@ Aunque solo les separa un año de vida, ella interpretó a la madre de Colin Far
 En Jeopardy! hay preguntas que tienen referencias implícitas en la frase, y unas partes del enunciado pueden depender de otras, como en el siguiente ejemplo de la categoría \textit{Antes y después}:
 
 \begin{center}
-La estrella de Jerry Maguire que mantiene automáticamente la velocidad de tu vehículo
+\textit{La estrella de Jerry Maguire que mantiene automáticamente la velocidad de tu vehículo.}
 
 \textbf{Respuesta}: Control Tom Cruise
 \end{center} 
 
-Hay una serie de algoritmos que primero detectan este tipo de preguntas y las referencias enlazadas en las frases.
-Hay veces que interesa conocer la relación entre varias entidades, o aquello que tienen en común.
+Primero se detectan este tipo de preguntas y las referencias enlazadas.
 Para interpretar las preguntas se dividen en distintas partes lógicas que puedan ser exploradas independientemente y combinar los resultados. % this-is-watson: [36]
-Por ejemplo, en esta pregunta con categoría \textit{Animales ficticios}, el sistema puede buscar por un lado personajes introducidos en $1894$ y por otro 
+Por ejemplo, en esta pregunta con categoría \textit{Animales ficticios}, el sistema puede buscar por un lado personajes introducidos en $1894$ y por otro aquello relacionado con $"$Hindi for bear$"$:
 
 \begin{center}
-El nombre de este personaje, introducido en $1894$, proviene de $"$Hindi for bear$"$
+\textit{El nombre de este personaje, introducido en $1894$, proviene de $"$Hindi for bear$"$.}
 
 \textbf{Respuesta}: Baloo
 \end{center}
 
 \
 
-Para poder ser operativo en un juego, el sistema debe mejorar las $2$ horas de procesamiento que necesita para responder una pregunta (en $2008$).
-El $UIMA-AS$ permite a cualquier aplicación $UIMA$ ser desplegada en una colección de procesos asíncronos que usan paso de mensajes para comunicarse.
-Cada pregunta se interpreta en un determinado número de preguntas candidatas, cada una se ejecuta independientemente, cada respuesta potencial de una pregunta candidata se ejecuta independientemente, y cada parte de evidencia también.
+El sistema debe mejorar las $2$ horas de procesamiento que necesita para responder una pregunta (en $2008$).
+El $UIMA-AS$ permite a cualquier aplicación $UIMA$ ser desplegada en  procesos asíncronos que utilizan paso de mensajes.
+Cada pregunta genera varias preguntas candidatas que se ejecutan independientemente, cada respuesta potencial por pregunta se busca independientemente, y cada comprobación de evidencia también.
 Tras usar $2880$ procesadores la latencia de respuesta bajó de dos horas a tres segundos. % this-is-watson [39]
 
 \
 
 Este sistema de pregunta-respuesta es estático y no aprovecha todo el potencial de la arquitectura DeepQA.
 Watson puede aplicarse a la salud modificando su base de conocimiento y enseñándole a hacer las preguntas adecuadas a los pacientes para obtener información sobre ellos e inferir una solución a partir de su historial médico.
+
+\subsubsection{Evolución del sistema}
+Watson en la actualidad no solamente se utiliza aplicado a la medicina, también se usa en finanzas e inteligencia de negocio en general.
+
+\begin{figure}[H]
+	\centering
+	\label{watson2today}
+	\includegraphics[trim = 0mm 14mm 0mm 10mm, clip, width=0.8\textwidth]{./Imagenes/watson2today.jpg}
+	\caption{Evolución del sistema Watson \cite{watson-history}}
+\end{figure}
+
+
+
+\subsection{IBM Bluemix}
+\href{https://www.ibm.com/cloud-computing/bluemix/es/node/2041}{IBM Bluemix}
+
+\begin{figure}[H]
+	\centering
+	\label{ibm-bluemix.jpg}
+	\includegraphics[width=0.5\textwidth]{./Imagenes/ibm-bluemix.jpg}
+	\caption{Logo IBM Bluemix \cite{bluemix-image}}
+\end{figure}
+
 
 
 
