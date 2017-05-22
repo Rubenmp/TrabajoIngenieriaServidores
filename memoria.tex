@@ -271,10 +271,35 @@ Para mantener una buena tolerancia a fallos debe incluirse un mantenimiento cons
 
 La seguridad de datos se define como protección contra acceso, transferencia, modificación o destrucción de datos sin autorización, ya sea accidental o intencional.
 
+% Mainframe strengths: Scalability
+\
+
+La capacidad de mantener niveles de rendimiento al agregar procesadores, memoria y almacenamiento.
+
+% Mainframe strength: Continuing compatibility
+% Mainframe workloads: Batch and online transaction processing
+\
+
+Un mainframe suele realizar dos tipos de trabajo, procesamiento en segundo plano (scripts) o transacciones online, diferenciándose en la interacción, o no, del usuario final.
+
+\begin{figure}[H]
+	\centering
+	\label{workloads}
+	\includegraphics[trim = 0mm 0mm 5mm 0mm, clip, width=0.5\textwidth]{./Imagenes/workloads.png}
+	\caption{Tipos de trabajo en un mainframe \cite{ibm-mainframes}}
+\end{figure}
+% Mainframes working after hours: Batch processing
+% Mainframes working with you: Online transaction processing (OLTP)
+
+% Roles in the mainframe world
+% What are mainframe operating systems?
+% Mainframe hardware concepts
+\subsubsection{Hardware}
+Además del grupo de procesadores primarios, los mainframes tienen una red de microprocesadores especiales que controlan el sistema.
 
 
-
-
+IBM utiliza el término CPC (Central Processor Complex) para referirse a la colección física de hardware que incluye almacenamiento principal, uno o más procesadores centrales, temporizadores y canales (algunos programadores de sistemas usan el término CEC (Central Electronic Complex) para referirse a la "caja" de mainframe).
+Otros términos usados en IBM son processing units (PUs), Integrated Facility for Linux (IFL) o Integrated Coupling Facility (ICF).
 
 
 
