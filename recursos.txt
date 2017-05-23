@@ -50,6 +50,7 @@ https://www.ibm.com/watson/products.html
 https://www.ibm.com/watson/
 
 IBM Bluemix
+https://console.ng.bluemix.net/docs/
 http://www.cek.ef.uni-lj.si/magister/sadulov2040-B.pdf
 https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-07/$file/i126-6605-07_03-2016_en_US.pdf
 https://www.ibm.com/devops/method/files/Garage_Method_Field_Guide_Nov2016.pdf
