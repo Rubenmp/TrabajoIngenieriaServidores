@@ -173,160 +173,119 @@ El primer ordenador digital de propósito general de IBM fue ASCC (\href{https:/
 
 
 \subsection{IBM mainframes}
-Usaremos la siguiente definición de mainframe
+Usaremos la siguiente definición de mainframe \cite{ibm-mainframes}
 \begin{center}
-	$"$Un mainframe es lo que las empresas usan para alojar bases de datos comerciales, servidores de transacciones y aplicaciones que requieren un mayor grado de seguridad y disponibilidad de lo que comúnmente se encuentra en máquinas de menor escala$"$ \cite{ibm-mainframes}
+	$"$Un mainframe es lo que las empresas usan para alojar bases de datos comerciales, servidores de transacciones y aplicaciones que requieren un mayor grado de seguridad y disponibilidad de lo que comúnmente se encuentra en máquinas de menor escala$"$ 
 \end{center}
-A día de hoy, los mainframes juegan un papel esencial en las operaciones diarias de las grandes compañías.
-La era de la información reclama muchas innovaciones, y las grandes compañías son víctimas en la marcha implacable del progreso.
-IBM desarrolla continuamente sus mainframes al mismo tiempo que mantiene la compatibilidad con aplicaciones existentes.
 
-\
-
-El término mainframe ha evolucionado gradualmente de una descripción física de las mayores computadoras de IBM hasta entenderse como un estilo de computación en sí mismo.
+El desarrollo de este tipo de computadoras comenzó en los años cincuenta, las grandes empresas los utilizaban como repositorios de datos.
+El término evolucionó desde considerarse puramente el hardware de IBM hasta entenderse como un estilo de computación en sí mismo.
 Un punto de inflexión en la historia de los mainframes fue el \textit{S/360}.
-El desarrollo del mainframe empezó en una serie de generaciones en los años cincuenta.
-En esa época eran las únicas computadoras y pocas empresas podían permitírselas, servían como repositorios de datos para las empresas.
-En los años sesenta los fabricantes de mainframes comenzaron a estandarizar el hardware y el software que ofrecían a los clientes.
+En los sesenta se comenzó a estandarizar tanto el hardware como el software.
 
 % The introduction of the IBM System/360™ (or S/360™) in 1964 signaled the start of the third generation: the first general purpose computers.
 % En el otro enlace pone que el primero fue ASCC (?)
+\
 
-El \textit{S/360} fue el primero de estos ordenadores en usar microcódigo para implementar muchas instrucciones máquina, sin tener todas sus instrucciones de máquina cableadas en sus circuitos. 
-El microcódigo (o firmware, como se le llama a veces) consiste en microinstrucciones (no disponibles para los usuarios) que proporcionan una capa funcional entre el hardware y el software.
-Nos ofrece flexibilidad ante cambios sin tener que reemplazar el hardware.
+El \textit{S/360} fue el primero de estos ordenadores en usar microcódigo para muchas instrucciones máquina, sin tener todas sus instrucciones cableadas. 
+El microcódigo (o firmware) consiste en microinstrucciones (no disponibles para los usuarios) que proporcionan una capa funcional entre el hardware y el software, nos ofrece flexibilidad ante cambios sin tener que reemplazar el hardware.
 Las primeras aplicaciones empresariales se escribieron en ensamblador, COBOL, FORTRAN o PL/1, y muchos de estos programas todavía están en uso hoy en día.
 
 \subsubsection{Arquitectura}
-Una arquitectura es un conjunto de términos y reglas que se utilizan para crear productos, son la estructura organizativa de un sistema.
-Una arquitectura puede descomponerse recursivamente en partes que interactúan a través de sus interfaces.
+A principios de los noventa el modelo cliente/servidor (con nodos menos potentes distribuidos) emergió para desafiar el dominio de los mainframe, por aquel entonces llamados dinosaurios.
+Los diseñadores crearon nuevos mainframe llamados T-Rex, algunos de los servicios que ofrecían eran el servicio web, mayor autonomía, recuperación ante desastres y computación grid.
+La computación grid hace referencia al uso simultáneo de diferentes recursos hardware y software cumpliendo varias características \cite{grid-def}:
+
+
+
+\begin{minipage}{\linewidth}
+	\centering
+	\begin{minipage}{0.45\linewidth}
+		\begin{itemize}
+			\item Coordinar recursos de forma descentralizada
+			
+			\item Protocolos e interfaces estándares, abiertos y de propósito general
+			
+			\item Ofrecer un servicio no trivial
+		\end{itemize}
+	\end{minipage}
+	\hspace{0.1cm}
+	\begin{minipage}{0.45\linewidth}
+		\begin{figure}[H]
+			\centering
+			\label{grid-c}
+			\includegraphics[width=0.65\textwidth]{./Imagenes/grid-c.jpg}
+			\caption{Computación grid, \href{http://tongdaiao.com.vn/tong-dai-ao-la-su-hien-dien-cua-mot-doanh-nghiep-thanh-cong/}{imagen}}
+		\end{figure}
+	\end{minipage}
+\end{minipage}
 
 \
-
-
-A principios de los 90 el modelo cliente/servidor, con nodos distribuidos de computadoras menos potentes, emergió para desafiar el dominio de las computadoras mainframe.
-La industria en estos momentos comenzó a llamar a los mainframes dinosaurios.
-Entonces los diseñadores crearon nuevos mainframe, llamados T-Rex, para satisfacer la demanda.
-Algunos de los servicios que ofrecía dicho mainframe eran el servicio web, mayor autonomía, recuperación ante desastres y grid-computing.
-Grid-computing hace referencia al uso simultáneo de diferentes recursos hardware y software de forma que cumpla varias características \cite{grid-def}:
-\begin{itemize}
-	\item Coordinar recursos de forma descentralizada
-	\item Usar protocolos e interfaces estándares, abiertos y de propósito general
-	\item Ofrecer un servicio no trivial
-\end{itemize}
-
-\begin{figure}[H]
-	\centering
-	\label{grid-c}
-	\includegraphics[width=0.4\textwidth]{./Imagenes/grid-c.png}
-	\caption{Grid computing \cite{grid-c-image}}
-\end{figure}
-
-Este tipo de computación forma los cimientos del Internet que conocemos hoy en día.
-Estos mainframes están diseñados para resistir los virus o comportamientos inadecuados.
 
 % What is a mainframe? It's a style of computing
-
-Hoy en día no siempre se usa el término mainframe, se ha tendido a llamar cualquier computadora de uso comercial, sin importar su tamaño, servidor. 
-El término mainframe se utiliza para los servidores más grandes.
-Una empresa grande puede tener servidores web, de bases de datos, correo o usar un mainframe para hacer varias de estas tareas.
-Cuando se tiene un conjunto de servidores suele hacerse referencia a una granja de servidores.
-La presencia de un mainframe a menudo implica una forma centralizada de computación.
-Cuando usamos un mainframe tenemos mayor flexibilidad y evitamos la necesidad de actualizar varios computadores a la vez, sin embargo, el hecho de tener varios computadores distribuidos aumenta la potencia de cálculo en relación al precio.
+Hoy en día se utiliza más el término servidor, cuando tenemos un grupo lo llamamos granja y mainframe hace referencia a los servidores más grandes.
+Un mainframe a menudo implica una centralización de la computación, aunque una empresa grande puede distribuir sus servicios en varios servidores.
 Los mainframes tienen la capacidad de configurarse dinámicamente, añadir procesadores, memoria y conexiones, mientras las aplicaciones continúan ejecutándose.
-Anteriormente se asociaba el término mainframe tanto con el hardware como con el software, pero dejó de tener sentido ya que el software de los grandes servidores ahora también puede ejecutarse en pequeñas computadoras.
-Eso permite desarrollar un programa delicado y probarlo en sistemas pequeños antes de moverlo al sistema de producción.
+Cuando usamos un mainframe tenemos mayor flexibilidad y evitamos actualizar varios computadores a la vez, sin embargo, tener varios computadores distribuidos aumenta la potencia de cálculo en relación al precio.
 
 \
 
-A menudo se utiliza el término plataforma para referirse al hardware y software como conjunto. El mainframe en sí suele cumplir alguna de las siguientes características \cite{ibm-mainframes}:
+A menudo se utiliza el término plataforma para referirse al hardware y software como conjunto. El mainframe en sí suele cumplir varias de las siguientes características \cite{ibm-mainframes}:
 \begin{itemize}
-	\item Control centralizado de recursos.
 	\item Compartir acceso disco con otros sistemas, con protección de los datos y control de privilegios.
-	\item Procedimientos sistemáticos para copias de seguridad y recuperación desde otra ubicación alternativa.
-	\item Trabajo rutinario con operaciones simultáneas de E/S.
-	\item Permitir usar varias copias del sistema operativo como un único sistema, dicha tecnología se conoce como \href{https://www-03.ibm.com/systems/z/advantages/pso/}{Parallel Sysplex}, es análogo al concepto de cluster en UNIX.
-	Esto permite controlar mejor las operaciones sobre las aplicaciones.
+	\item Procedimientos sistemáticos de copias de seguridad y recuperación desde otra ubicación.
+	\item Trabajo rutinario con operaciones simultáneas de E/S. %
+	\item Permitir usar varias copias del sistema operativo como un único sistema, dicha tecnología se conoce como \href{https://www-03.ibm.com/systems/z/advantages/pso/}{Parallel Sysplex} (cluster en UNIX).
 	\item Gran capacidad de compartir datos y recursos.
 \end{itemize}
 
+\
 
 % Who uses mainframes and why do they do it?
-\
-
-Muchas veces interactuamos como mainframes sin saberlo, por ejemplo cuando se utiliza un cajero automático.
-
 % Mainframe strengths: Reliability, availability, and serviceability
-Para identificar las fortalezas de un mainframe se utilizan las siglas RAS(\textbf{R}eliability, \textbf{A}vailability y \textbf{S}erviceability)
+Las fortalezas se representan mediante las siglas RAS (Reliability, Availability y Serviceability)
 \begin{itemize}
-	\item Confiabilidad: El hardware tiene comprobación y recuperación de errores y se aplican mejoras software cuando existe un problema
-	\item Disponibilidad: Capacidad de reemplazamiento del hardware y el software, aunque es deseable mantener un MTBF (Mean time between failure) lo más bajo posible 
-	\item Utilidad: Capacidad de entender el tipo de error que ha ocurrido, lo que permite conocer lo que hay que cambiar
+	\item Confiabilidad: El hardware tiene comprobación y recuperación de errores y se aplican actualizaciones software cuando existe un problema
+	\item Disponibilidad: Capacidad de reemplazamiento del hardware y el software, aunque es deseable mantener un MTBF (Mean time between failure) lo más alto posible
+	\item Utilidad: Entender el tipo de los errores, lo que permite conocer lo que hay que modificar
 \end{itemize}
 
-Para mantener una buena tolerancia a fallos debe incluirse un mantenimiento constante con copias de seguridad redundantes y controlar los accesos la seguridad de los datos se define como la protección contra el acceso no autorizado, la transferencia, la modificación o la destrucción, ya sea accidental o intencional.mediante privilegios.
+Para mantener una buena tolerancia a fallos debe incluirse un mantenimiento constante con copias de seguridad redundantes y controlar los accesos mediante privilegios, la seguridad de los datos se define como la protección contra el acceso no autorizado, la transferencia, la modificación o la destrucción, ya sea accidental o intencional.
+Otra cualidad deseable es la escalabilidad, capacidad de mantener niveles de rendimiento al agregar procesadores, memoria y almacenamiento.
 
 \
-% Mainframe strengths: Security
-
-La seguridad de datos se define como protección contra acceso, transferencia, modificación o destrucción de datos sin autorización, ya sea accidental o intencional.
-
-% Mainframe strengths: Scalability
-\
-
-La capacidad de mantener niveles de rendimiento al agregar procesadores, memoria y almacenamiento.
-
 % Mainframe strength: Continuing compatibility
 % Mainframe workloads: Batch and online transaction processing
-\
-
-Un mainframe suele realizar dos tipos de trabajo, procesamiento en segundo plano (scripts) o transacciones online, diferenciándose en la interacción, o no, del usuario final.
+Un mainframe suele realizar dos tipos de trabajo, procesamiento en segundo plano (scripts) o transacciones online, diferenciándose en la interacción con el usuario final.
 
 \begin{figure}[H]
 	\centering
 	\label{workloads}
-	\includegraphics[trim = 0mm 0mm 5mm 0mm, clip, width=0.5\textwidth]{./Imagenes/workloads.png}
+	\includegraphics[trim = 0mm 0mm 5mm 0mm, clip, width=0.55\textwidth]{./Imagenes/workloads.png}
 	\caption{Tipos de trabajo en un mainframe \cite{ibm-mainframes}}
 \end{figure}
-% Mainframes working after hours: Batch processing
-% Mainframes working with you: Online transaction processing (OLTP)
 
-% Roles in the mainframe world
-% What are mainframe operating systems?
 % Mainframe hardware concepts
 \subsubsection{Hardware}
 Además del grupo de procesadores primarios, los mainframes tienen una red de microprocesadores especiales que controlan el sistema.
-
-
-IBM utiliza el término CPC (Central Processor Complex) para referirse a la colección física de hardware que incluye almacenamiento principal, uno o más procesadores centrales, temporizadores y canales (algunos programadores de sistemas usan el término CEC (Central Electronic Complex) para referirse a la "caja" de mainframe).
-Otros términos usados en IBM son processing units (PUs), Integrated Facility for Linux (IFL) o Integrated Coupling Facility (ICF).
+IBM utiliza el término CPC (Central Processor Complex) para referirse a la colección física de hardware que incluye almacenamiento principal, uno o más procesadores centrales, temporizadores y canales.
 A parte del procesador central un mainframe tiene un asistente SAP (System Assistance Processor) para las operaciones de entrada y salida.
+Las unidades de disco físicas son unidades de tipo SCSI aunque se puede utilizar SSA, para un acceso más rápido a los discos, suele usar un RAID 5.
 
 \
 
 El mainframe se divide en diversas partes lógicas, cada una puede soportar un sistema operativo.
-Se pueden distribuir los recursos entre las partes lógica o usar el algoritmo interno de distribución de carga.
-El software que se necesita para un mainframe suele ser muy caro, de hecho a veces un cliente quiere el último mainframe, pero a la vez el más lento que ejecute sus aplicaciones, para reducir costes software (el software suele ir en función de la potencia).
-De hecho los mainframes tienen varios proesadores que no conmutan para la potencia en las licencias software, por ejemplo: Integrated Facility for Linux (IFL), zAAP, zIIP, Integrated Coupling Facility (ICF), también tienen procesadores de repuesto, Spare. 
-De hecho se llega a controlar la potencia de los procesadores principales del mainframe insertando ciclos nulos en la secuencia de instrucciones dl procesador.
-Cada procesador tiene $8KB$ para PSA (Prefix Storage Area) y se utiliza para el manejo de interrupciones y de errores.
-Esta memoria puede compartirse entre procesadores para que arreglar errores.
+Se pueden distribuir los recursos entre las partes lógicas o usar el algoritmo interno de distribución de carga.
+El software que se necesita para un mainframe suele ser muy caro, de hecho a veces un cliente quiere el último mainframe y más lento, para reducir costes software (el software suele ir en función de la potencia).
+De hecho los mainframes tienen varios procesadores que no conmutan para la potencia en las licencias software, por ejemplo: Integrated Facility for Linux (IFL), zAAP, zIIP, Integrated Coupling Facility (ICF), también tienen procesadores de repuesto, llamados Spare. 
+De hecho se llega a controlar la potencia de los procesadores principales insertando ciclos nulos en la secuencia de instrucciones dl procesador.
+Cada procesador tiene $8KB$ compartidos para PSA (Prefix Storage Area) y se utiliza para el manejo de interrupciones y de errores.
 
 \
 
-Las unidades de disco físicas son unidades de tipo SCSI aunque se puede utilizar SSA, para un acceso más rápido a los discos.
-Para los discos se suele usar un RAID 5.
-
 % Clustering on the mainframe: Parallel Sysplex and other techniques
-
-
-La más sofisticada de las técnicas de clustering es Parallel Sysplex.
-Esta tecnología permite la unir hasta 32 servidores con escalabilidad casi lineal. 
-Hay varias técnica de clustering, entre ellas \href{https://www.ibm.com/support/knowledgecenter/zosbasics/com.ibm.zos.zmainframe/zconc_clusterDASD.htm?view=embed}{Basic shared direct access storage devices (DASD)}, \href{https://www.ibm.com/support/knowledgecenter/zosbasics/com.ibm.zos.zmainframe/zconc_clusterCTC.htm?view=embed}{Channel-to-channel (CTC) rings} y \href{https://www.ibm.com/support/knowledgecenter/zosbasics/com.ibm.zos.zmainframe/zconc_clusterPlSys.htm?view=embed}{Parallel Sysplex}.
-
-
-
-
+La más sofisticada de las técnicas de clustering es \href{https://www.ibm.com/support/knowledgecenter/zosbasics/com.ibm.zos.zmainframe/zconc_clusterPlSys.htm?view=embed}{Parallel Sysplex}, permitiendo enlazar hasta 32 servidores con escalabilidad casi lineal. 
+Hay otras técnicas de clustering, entre ellas \href{https://www.ibm.com/support/knowledgecenter/zosbasics/com.ibm.zos.zmainframe/zconc_clusterDASD.htm?view=embed}{Basic shared direct access storage devices (DASD)} y  \href{https://www.ibm.com/support/knowledgecenter/zosbasics/com.ibm.zos.zmainframe/zconc_clusterCTC.htm?view=embed}{Channel-to-channel (CTC) rings}.
 
 
 \subsection{Watson}
@@ -505,7 +464,7 @@ Watson en la actualidad no solamente se utiliza aplicado a la medicina, también
 
 
 \section{Conclusiones}
-
+% Si eres rico, IBM mola
 
 
 
