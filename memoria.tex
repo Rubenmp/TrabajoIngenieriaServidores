@@ -300,7 +300,29 @@ Además del grupo de procesadores primarios, los mainframes tienen una red de mi
 
 IBM utiliza el término CPC (Central Processor Complex) para referirse a la colección física de hardware que incluye almacenamiento principal, uno o más procesadores centrales, temporizadores y canales (algunos programadores de sistemas usan el término CEC (Central Electronic Complex) para referirse a la "caja" de mainframe).
 Otros términos usados en IBM son processing units (PUs), Integrated Facility for Linux (IFL) o Integrated Coupling Facility (ICF).
+A parte del procesador central un mainframe tiene un asistente SAP (System Assistance Processor) para las operaciones de entrada y salida.
 
+\
+
+El mainframe se divide en diversas partes lógicas, cada una puede soportar un sistema operativo.
+Se pueden distribuir los recursos entre las partes lógica o usar el algoritmo interno de distribución de carga.
+El software que se necesita para un mainframe suele ser muy caro, de hecho a veces un cliente quiere el último mainframe, pero a la vez el más lento que ejecute sus aplicaciones, para reducir costes software (el software suele ir en función de la potencia).
+De hecho los mainframes tienen varios proesadores que no conmutan para la potencia en las licencias software, por ejemplo: Integrated Facility for Linux (IFL), zAAP, zIIP, Integrated Coupling Facility (ICF), también tienen procesadores de repuesto, Spare. 
+De hecho se llega a controlar la potencia de los procesadores principales del mainframe insertando ciclos nulos en la secuencia de instrucciones dl procesador.
+Cada procesador tiene $8KB$ para PSA (Prefix Storage Area) y se utiliza para el manejo de interrupciones y de errores.
+Esta memoria puede compartirse entre procesadores para que arreglar errores.
+
+\
+
+Las unidades de disco físicas son unidades de tipo SCSI aunque se puede utilizar SSA, para un acceso más rápido a los discos.
+Para los discos se suele usar un RAID 5.
+
+% Clustering on the mainframe: Parallel Sysplex and other techniques
+
+
+La más sofisticada de las técnicas de clustering es Parallel Sysplex.
+Esta tecnología permite la unir hasta 32 servidores con escalabilidad casi lineal. 
+Hay varias técnica de clustering, entre ellas \href{https://www.ibm.com/support/knowledgecenter/zosbasics/com.ibm.zos.zmainframe/zconc_clusterDASD.htm?view=embed}{Basic shared direct access storage devices (DASD)}, \href{https://www.ibm.com/support/knowledgecenter/zosbasics/com.ibm.zos.zmainframe/zconc_clusterCTC.htm?view=embed}{Channel-to-channel (CTC) rings} y \href{https://www.ibm.com/support/knowledgecenter/zosbasics/com.ibm.zos.zmainframe/zconc_clusterPlSys.htm?view=embed}{Parallel Sysplex}.
 
 
 
