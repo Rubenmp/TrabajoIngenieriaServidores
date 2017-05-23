@@ -4,7 +4,7 @@
   https://www.youtube.com/watch?v=rVskLrzdNlA
 
   IBM Mainframe: Make the Extraordinary Possible
-  https://www.youtube.com/watch?v=4-kDwmD4CcM&list=PL631mUZUtnt7fkDEFExG0Tp1gXyD0bZFu
+https://www.youtube.com/watch?v=4-kDwmD4CcM&list=PL631mUZUtnt7fkDEFExG0Tp1gXyD0bZFu
 
 -- Explicativos
   The IBM z13s & z13 hardware and software stack explained
@@ -13,11 +13,9 @@
   IBM talks Blockchain at InterConnect 2016
   https://www.youtube.com/watch?v=8xBrjf05b-w
 
-  IBM Watson: How it Works
-  https://www.youtube.com/watch?v=_Xcmh1LQB9I&index=5&list=PL631mUZUtnt7fkDEFExG0Tp1gXyD0bZFu
+  IBM Watson: How it Works  https://www.youtube.com/watch?v=_Xcmh1LQB9I&index=5&list=PL631mUZUtnt7fkDEFExG0Tp1gXyD0bZFu
 
-  How It Works: IBM Watson Health
-  https://www.youtube.com/watch?v=ZPXCF5e1_HI&index=8&list=PL631mUZUtnt7fkDEFExG0Tp1gXyD0bZFu
+  How It Works: IBM Watson Health https://www.youtube.com/watch?v=ZPXCF5e1_HI&index=8&list=PL631mUZUtnt7fkDEFExG0Tp1gXyD0bZFu
 
   IBM Smarter Videos: https://www.youtube.com/playlist?list=PLlUE3xu9JiOqyFy9Mvvh7MGs_4eFRXOeG
 
@@ -50,3 +48,9 @@ Watson Internet of Things
 https://www-01.ibm.com/common/ssi/apilite?infotype=PM&infosubt=AB&doctype=XWW_WWX%20or%20XWW_WYX%20or%20XWW_WZX%20or%20XWW_WTX&pubno=*USEN&lastdays=1825&appname=WTIE_WW_WW_USEN_CS&additional=summary&contents=C0_CST%20and%20keeponlit
 https://www.ibm.com/watson/products.html
 https://www.ibm.com/watson/
+
+IBM Bluemix
+http://www.cek.ef.uni-lj.si/magister/sadulov2040-B.pdf
+https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-07/$file/i126-6605-07_03-2016_en_US.pdf
+https://www.ibm.com/devops/method/files/Garage_Method_Field_Guide_Nov2016.pdf
+https://www.exitcertified.com/training/ibm/blueworks-live/bluemix/introduction-bluemix-spvc-46272-detail.html
