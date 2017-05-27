@@ -145,14 +145,10 @@ El mundo de las tecnologías de la información y la comunicación toma un papel
 \
 
 Una vez que tenemos una base tecnológica  y cierto volumen de negocio es recomendable pasar al siguiente nivel, tener datos suficientes y de calidad recopilados de forma que podamos obtener un beneficio competitivo extrayendo información.
-Entonces entra en juego el análisis de datos y mantener esa información segura, por temas de protección de datos.
-Aquí es donde interviene IBM mainframes \cite{ibm-m}, grandes ordenadores que nos ofrecen computación en la nube de forma que podremos almacenar los datos en dichos servidores con cierta garantía y a la vez dejar a estos ordenadores el procesamiento pesado.
+Entra en juego el análisis de datos y mantener esa información segura, por temas de protección de datos.
+Aquí es donde interviene IBM mainframes \cite{ibm-m}, grandes ordenadores que nos ofrecen almacenamiento y computación en la nube.
 
 \
-
-El primer ordenador digital de propósito general de IBM fue ASCC (\href{https://www-03.ibm.com/ibm/history/exhibits/markI/markI_intro.html}{Automatic Sequence Controlled Calculator}), se desarrolló junto con la Universidad de Harvard. Entre los sistemas más modernos hablaremos de \href{https://www-03.ibm.com/systems/z/}{z Systems}.
-
-
 
 \begin{figure}[H]
 	\centering
@@ -165,9 +161,10 @@ El primer ordenador digital de propósito general de IBM fue ASCC (\href{https:/
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\href{https://www-03.ibm.com/systems/z/hardware/z13.html}{\includegraphics[width=.75\linewidth]{./Imagenes/z13.jpg}}
-		\caption{Z13}
+		\caption{\href{https://www-03.ibm.com/systems/z/}{Z13}}
 		\label{fig:z13}
 	\end{subfigure}
+	\caption{Evolución mainframes}
 \end{figure}
 
 
@@ -179,24 +176,21 @@ Usaremos la siguiente definición de mainframe \cite{ibm-mainframes}
 \end{center}
 
 El desarrollo de este tipo de computadoras comenzó en los años cincuenta, las grandes empresas los utilizaban como repositorios de datos.
-El término evolucionó desde considerarse puramente el hardware de IBM hasta entenderse como un estilo de computación en sí mismo.
-Un punto de inflexión en la historia de los mainframes fue el \textit{S/360}.
+El término evolucionó desde considerarse solamente el hardware de IBM hasta entenderse como un estilo de computación en sí mismo.
 En los sesenta se comenzó a estandarizar tanto el hardware como el software.
 
 % The introduction of the IBM System/360™ (or S/360™) in 1964 signaled the start of the third generation: the first general purpose computers.
 % En el otro enlace pone que el primero fue ASCC (?)
 \
 
-El \textit{S/360} fue el primero de estos ordenadores en usar microcódigo para muchas instrucciones máquina, sin tener todas sus instrucciones cableadas. 
+Un punto de inflexión en la historia fue el \textit{S/360}, el primero de estos ordenadores en usar microcódigo para muchas instrucciones máquina, sin tener todas sus instrucciones cableadas. 
 El microcódigo (o firmware) consiste en microinstrucciones (no disponibles para los usuarios) que proporcionan una capa funcional entre el hardware y el software, nos ofrece flexibilidad ante cambios sin tener que reemplazar el hardware.
-Las primeras aplicaciones empresariales se escribieron en ensamblador, COBOL, FORTRAN o PL/1, y muchos de estos programas todavía están en uso hoy en día.
+Las primeras aplicaciones empresariales se programaron en ensamblador, COBOL, FORTRAN o PL/1, y muchos de estos programas todavía siguen en uso.
 
 \subsubsection{Arquitectura}
-A principios de los noventa el modelo cliente/servidor (con nodos menos potentes distribuidos) emergió para desafiar el dominio de los mainframe, por aquel entonces llamados dinosaurios.
-Los diseñadores crearon nuevos mainframe llamados T-Rex, algunos de los servicios que ofrecían eran el servicio web, mayor autonomía, recuperación ante desastres y computación grid.
+A principios de los noventa el modelo de nodos menos potentes distribuidos emergió para desafiar el dominio de los mainframe, por aquel entonces eran llamados dinosaurios.
+Los diseñadores desarrollaron nuevos mainframes llamados T-Rex, algunos de los servicios que ofrecían eran el servicio web, mayor autonomía, recuperación ante desastres y computación grid.
 La computación grid hace referencia al uso simultáneo de diferentes recursos hardware y software cumpliendo varias características \cite{grid-def}:
-
-
 
 \begin{minipage}{\linewidth}
 	\centering
@@ -230,7 +224,7 @@ Cuando usamos un mainframe tenemos mayor flexibilidad y evitamos actualizar vari
 
 \
 
-A menudo se utiliza el término plataforma para referirse al hardware y software como conjunto. El mainframe en sí suele cumplir varias de las siguientes características \cite{ibm-mainframes}:
+A menudo se utiliza el término plataforma para referirse al conjunto de hardware y software. El mainframe en sí suele cumplir varias de las siguientes características \cite{ibm-mainframes}:
 \begin{itemize}
 	\item Compartir acceso disco con otros sistemas, con protección de los datos y control de privilegios.
 	\item Procedimientos sistemáticos de copias de seguridad y recuperación desde otra ubicación.
@@ -243,17 +237,16 @@ A menudo se utiliza el término plataforma para referirse al hardware y software
 
 % Who uses mainframes and why do they do it?
 % Mainframe strengths: Reliability, availability, and serviceability
-Las fortalezas se representan mediante las siglas RAS (Reliability, Availability y Serviceability)
+Las fortalezas del mainframe se representan mediante las siglas RAS (Reliability, Availability y Serviceability)
 \begin{itemize}
-	\item Confiabilidad: El hardware tiene comprobación y recuperación de errores y se aplican actualizaciones software cuando existe un problema
-	\item Disponibilidad: Capacidad de reemplazamiento del hardware y el software, aunque es deseable mantener un MTBF (Mean time between failure) lo más alto posible
-	\item Utilidad: Entender el tipo de los errores, lo que permite conocer lo que hay que modificar
+	\item Confiabilidad: El hardware tiene comprobación y recuperación de errores y se aplican actualizaciones software cuando existe un problema. 
+	\item Disponibilidad: Capacidad de reemplazamiento del hardware y el software, aunque es deseable mantener un MTBF (Mean time between failure) lo más alto posible.
+	\item Utilidad: Entender el tipo de los errores, lo que permite conocer lo que hay que modificar.
 \end{itemize}
-
-Para mantener una buena tolerancia a fallos debe incluirse un mantenimiento constante con copias de seguridad redundantes y controlar los accesos mediante privilegios, la seguridad de los datos se define como la protección contra el acceso no autorizado, la transferencia, la modificación o la destrucción, ya sea accidental o intencional.
 Otra cualidad deseable es la escalabilidad, capacidad de mantener niveles de rendimiento al agregar procesadores, memoria y almacenamiento.
 
 \
+
 % Mainframe strength: Continuing compatibility
 % Mainframe workloads: Batch and online transaction processing
 Un mainframe suele realizar dos tipos de trabajo, procesamiento en segundo plano (scripts) o transacciones online, diferenciándose en la interacción con el usuario final.
