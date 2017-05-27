@@ -527,18 +527,21 @@ Para el servicio de agente conversacional hemos usado una demo de un agente que 
 			\caption{Ejemplo de detección de emociones (5)}
 \end{figure}
 
-\begin{figure}[H]
-			\centering
-			\label{conversacion1.jpg}
-			\includegraphics[width=0.75\textwidth]{./Imagenes/conversacion1.jpeg}
-			\caption{Ejemplo de uso de detección de emociones para un serivicio técnico (1)}
-\end{figure}
 
 \begin{figure}[H]
-			\centering
-			\label{conversacion2.jpg}
-			\includegraphics[width=0.75\textwidth]{./Imagenes/conversacion2.jpeg}
-			\caption{Ejemplo de uso de detección de emociones para un serivicio técnico (2)}
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\label{conversacion1.jpg}
+		\includegraphics[width=0.99\textwidth]{./Imagenes/conversacion1.jpeg}
+		\caption{Ejemplo de uso de detección de emociones para un serivicio técnico (1)}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\label{conversacion2.jpg}
+		\includegraphics[width=0.99\textwidth]{./Imagenes/conversacion2.jpeg}
+		\caption{Ejemplo de uso de detección de emociones para un serivicio técnico (2)}
+	\end{subfigure}
 \end{figure}
 
 Otro de los servicios que ofrece Bluemix gracias a Watson es un servicio capaz de detectar emociones y tonalidad en un texto escrito. A continuación se muestran los resultados con algunas frases que hemos introducido a modo de prueba. Hemos comprobado que el análisis de las emociones que hace se basa puramente en el léxico y no tiene en cuenta demasiado la semántica. Por ejemplo, en la frase ``I hope he dies'' solo detectaba tristeza, probablemente por el uso de la palabra ``dies'', a pesar de que la frase claramente no expreza tristeza.
