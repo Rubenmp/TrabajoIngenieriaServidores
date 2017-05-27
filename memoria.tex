@@ -449,7 +449,15 @@ Watson en la actualidad no solamente se utiliza aplicado a la medicina, también
 	\centering
 	\begin{minipage}{0.45\linewidth}
 \href{https://www.ibm.com/cloud-computing/bluemix/es/node/2041}{IBM Bluemix} \cite{bluemix-doc} es una plataforma de cloud computing que combina la \href{https://azure.microsoft.com/es-es/overview/what-is-paas/}{plataforma como servicio (PaaS)} con la \href{https://azure.microsoft.com/es-es/overview/what-is-iaas/}{infraestructura como servicio (IaaS)}.
-Bluemix permite usar sus servicios y herramientas
+
+\
+
+Bluemix integra servicios que hacen uso de Watson como reconocimiento de lenguaje natural, traducción, reconocimiento de lenguaje por voz, conversión de formatos de archivo, reconocimiento de emociones en texto escrito, reconocimiento de imágenes o agentes conversacionales. Permite además, adaptar estos servicios a múltiples contextos. Por ejemplo, si queremos un agente conversacional para controlar determinadas funciones de un coche, podemos desarrollar uno gracias a Watson que domine específicamente el léxico de los componentes de un coche. O, en el caso del reconocimiento de emociones en texto escrito, podemos programar un bot que analice las reacciones en Twitter a un producto que acaba de lanzar nuestra compañía, pero también podemos usarlo para medir la satisfacción de nuestros clientes cuando usan el servicio técnico.
+
+\
+
+Bluemix permite usar demos gratuitas de estos servicios, y para este trabajo hemos probado algunas de ellas.
+
 	\end{minipage}
 	\hspace{0.1cm}
 	\begin{minipage}{0.45\linewidth}
@@ -462,13 +470,37 @@ Bluemix permite usar sus servicios y herramientas
 	\end{minipage}
 \end{minipage}
 
+\subsubsection{Agente conversacional}
 
+Nada más abrir el panel de configuración de nuestro agente conversacional nos ofrece la posibilidad de añadir \textit{intents}. Los \textit{intents} son distintos contextos de nuestra conversación. Un \textit{intent} podría ser, por ejemplo #turn_off. Al contexto #turn_off pertenecerían todas aquellas frases en las que el usuario implica que quiere apagar algo, aunque no aparezcan literalmente las palabras ``turn off'' (por ejemplo, ``stop the music'' pertenecería a este textit{intent}). Los \textit{intents} son establecidos por el programador, y para cada uno de ellos debe introducir varios ejemplos de frases del usuario de ese tipo. Con el tiempo, Watson debería ser capaz de ampliar esa muestra y clasificar adecuadamente frases que no habían sido contempladas originalmente. Este comportamiento es similar al que usó Watson en textit{Jeopardy!} para deducir qué se pedía con una frase aunque no se dijera explícitamente.
 
+\
+
+Para el servicio de agente conversacional hemos usado una demo de un agente pensado para usar como un asistente en el coche. Cuando decimos al agente ``I'm hungry'' este lo clasifica en el \textit{intent} #locate_amenity (``localizar servicio'') y detecta el concepto ``@amenity:restaurant'' (de nuevo, hace un uso de los conceptos similar al usado en textit{Jeopardy!}.
+
+\subsubsection{Detección de emociones en texto escrito}
+
+Otro de los servicios que ofrece Bluemix gracias a Watson es un servicio capaz de detectar emociones y tonalidad en un texto escrito. A continuación se muestran los resultados con algunas frases que hemos introducido a modo de prueba. Hemos comprobado que el análisis de las emociones que hace se basa puramente en el léxico y no tiene en cuenta demasiado la semántica. Por ejemplo, en la frase ``I hope he dies'' solo detectaba tristeza, probablemente por el uso de la palabra ``dies'', a pesar de que la frase claramente no expreza tristeza.
+
+\
+
+Como se ha mencionado previamente, uno de los posibles usos de este servicio es monitorizar las emociones de los clientes que hacen uso del servicio para que les sea lo más satisfactorio posible. En las siguientes figuras se muestra un ejemplo de este uso.
 
 \section{Conclusiones}
-% Si eres rico, IBM mola
 
+Desde el siglo pasado, el reconocimiento del lenguaje natural ha vivido un progreso constante. Sin embargo, la victoria en 2011 de Watson en textit{Jeopardy!} marcó un antes y un después. El nivel de sofisticación actual permite ir más allá del simple reconocimiento de patrones: ahora podemos reconocer intenciones implícitas en una conversación, discernir entre los posibles significados de una expresión según el contexto de la conversación. Esto, unido a los grandes volúmenes de información disponibles en internet sobre cualquier tema y las mayores prestaciones de los servidores actuales abre un abanico de posibilidades que hace poco eran completamente inviables. 
 
+\
+
+Empresas como IBM han sabido ver un creciente nicho de mercado en este terreno, ofreciendo servicios como traducción, reconocimiento de emociones en el texto escrito o agentes conversacionales. Lograr que un ordenador pueda mantener una conversación natural y coherente con un humano o la capacidad de reconocer el tono o la intencionalidad de las palabras es un logro que va, lógicamente, más allá de la simple satisfacción de nuestra curiosidad intelectual: el uso de estas tecnologías puede reportar beneficios para usuarios, empresas y a la sociedad en general. Los usuarios podrán tener experiencias más satisfactorias cuando contacten con el servicio técnico de un producto, controlar su casa o su coche con su voz usando expresiones naturales o hacer traducciones de calidad superior a las actuales. Las empresas podrán evaluar mejor la experiencia de sus clientes o analizar de manera más precisa las impresiones que causan sus productos. La sociedad podrá beneficiarse, por ejemplo, de mejores sistemas de salud porque seremos capaces de diseñar médicos de cabecera artificiales que analicen mejor lo que le ocurre a los pacientes, tengan acceso a cantidades ingentes de información en un instante y puedan atenderlos en sus propias casas.
+
+\
+
+No obstante, sigue habiendo mucho margen de mejora en el reconocimiento del lenguaje natural. Durante la prueba del servicio de reconocimiento de emociones observamos que esta tecnología deja aún mucho que desear. A menudo las interpretaciones que hacía del texto se dejaban influir por el léxico sin tener en cuenta la semántica de la frase. En el futuro se debe mejorar este aspecto, así como lograr detectar ironías o dobles sentidos.
+
+\
+
+Otros retos tienen relación más directa con la ingeniería de servidores. Si queremos que los agentes conversacionales se parezcan lo suficiente a conversar con un humano, debemos mejorar los tiempos de latencia para que las respuestas sean instantáneas. Debemos ser capaces, también, de gestionar volúmenes cada vez mayores de información en cada vez menos tiempo.
 
 %------------------------------------------------
 \newpage
