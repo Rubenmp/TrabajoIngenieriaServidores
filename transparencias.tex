@@ -16,6 +16,8 @@
 \usepackage[T1]{fontenc}    % Permite copiar y evita errores
 \uselanguage{Spanish}       % Traducciones beamer
 \languagepath{Spanish}      % (tex.stackexchange.com/questions/168208)
+\usepackage{caption}
+\usepackage{subcaption}
 
 % Matemáticas
 \usepackage{amsfonts}
@@ -101,6 +103,7 @@ literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1
 % Evita wranings itemize
 \renewcommand\textbullet{\ensuremath{\bullet}}
 
+
 %% Título y otros %%
 \title{IBM mainframes \\ Watson Machine Learning}
 \author{Francisco Javier Morales Piqueras \\ Rubén Morales Pérez}
@@ -114,17 +117,112 @@ literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1
 \titlepage
 \end{frame}
 
-\begin{frame}{Índice}
-  \hypertarget{index}{}
-  \tableofcontents
+\begin{frame}{Introducción}
+	\begin{block}{Definición}
+		Un mainframe es lo que las empresas usan para alojar bases de datos comerciales, servidores de transacciones y aplicaciones que requieren un mayor grado de seguridad y disponibilidad de lo que comúnmente se encuentra en máquinas de menor escala.
+	\end{block}
+
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\href{https://www-03.ibm.com/ibm/history/exhibits/markI/markI_intro.html}{		\includegraphics[width=.75\linewidth]{./Imagenes/ascc.jpg}}
+			\caption{ASCC}
+			\label{fig:ascc}
+		\end{subfigure}%
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\href{https://www-03.ibm.com/systems/z/hardware/z13.html}{\includegraphics[width=.65\linewidth]{./Imagenes/z13.jpg}}
+			\caption{\href{https://www-03.ibm.com/systems/z/}{Z13}}
+			\label{fig:z13}
+		\end{subfigure}
+		\caption{Evolución mainframes}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Posibles aplicaciones}
+	\begin{figure}
+		\centering
+		\includegraphics[width=.95\linewidth]{./Imagenes/j-watson.jpg}
+		\caption{Watson en \textit{Jeopardy!}}
+		\label{watson}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Grid computing}
+		Uso descentralizado de diferentes recursos hardware y software
+	\end{block}
+	\begin{figure}
+		\centering
+		\includegraphics[width=.65\linewidth]{./Imagenes/grid-c.jpg}
+		\caption{Grid computing}
+		\label{grid-c}
+	\end{figure}
 \end{frame}
 
 
+\begin{frame}
+	\begin{block}{Características mainframe}
+		\begin{itemize}
+			\item Altas prestaciones
+			\item Seguridad
+			\item Acceso a disco compartido
+			\item Protección de los datos y control de privilegios
+			\item Copias de seguridad y capacidad recuperación
+			\item Varias copias del sistema operativo como un único sistema, o Parallel Sysplex (cluster en UNIX).
+		\end{itemize}
+	\end{block}
+	\begin{exampleblock}{Términos}
+		\begin{itemize}
+			\item Servidor
+			\item Granja
+			\item Configuración dinámica
+			\item Plataforma
+		\end{itemize}
+	\end{exampleblock}
+\end{frame}
 
 
+\begin{frame}
+	\begin{block}{Ventajas mainframe}
+		\begin{itemize}
+			\item El hardware tiene comprobación y recuperación de errores
+			\item Reemplazamiento del hardware y el software
+			\item Tipo de errores comprensible
+		\end{itemize}
+	\end{block}
+	\begin{figure}[H]
+		\centering
+		\label{workloads}
+		\includegraphics[trim = 0mm 0mm 5mm 0mm, clip, width=0.75\textwidth]{./Imagenes/workloads.png}
+		\caption{Tipos de trabajo en un mainframe}
+	\end{figure}
+\end{frame}
 
-
-
+\begin{frame}{Watson}
+	\begin{block}{Características Watson}
+		\begin{itemize}
+			\item Sistema QA (Question answering)
+			\begin{itemize}
+				\item Procesamiento
+				de lenguaje natural (NLP)	
+				\item Representación del conocimiento
+				\item Razonamiento
+			\end{itemize}
+		\end{itemize}
+	\end{block}
+	\begin{block}{Comunicación humana}
+		Tiene varias características no deseables
+		\begin{itemize}
+			\item Imperfecta
+			\item Polisemia
+			\item Ironías
+			\item Contexto
+			\item Sin estructura
+		\end{itemize}
+	\end{block}
+\end{frame}
 
 \end{document}
 

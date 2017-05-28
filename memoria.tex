@@ -141,9 +141,9 @@ De hecho esa es la estructura básica de Internet.
 
 \
 
-La mayor parte de la información que se crea está en lenguaje natural, de forma que sirve para ser usado como bibliografía pero no es una tarea sencilla automatizar procesos que hagan uso de dicha información.
+Mucha de la información que se crea está en lenguaje natural, de forma que sirve para ser usado como bibliografía pero no es una tarea sencilla automatizar procesos que hagan uso de dicha información.
 Para almacenar la información IBM nos ofrece sus mayores ordenadores o mainframes, para la parte del procesamiento invirtió en la investigación del procesamiento de lenguaje natural.
-Este último desarrollo se utiliza en el sistema Watson, que demostró su potencia ganando a los mejores jugadores de \textit{Jeopardy!} y sigue en continuo desarrollo.
+Este último desarrollo se utiliza en el sistema Watson, que demostró su potencia ganando a los mejores jugadores de \textit{Jeopardy!} y está en continuo desarrollo.
 
 \
 
@@ -221,7 +221,7 @@ La computación grid hace referencia al uso simultáneo de diferentes recursos h
 		\begin{figure}[H]
 			\centering
 			\label{grid-c}
-			\includegraphics[width=0.65\textwidth]{./Imagenes/grid-c.jpg}
+			\includegraphics[width=0.7\textwidth]{./Imagenes/grid-c.jpg}
 			\caption{Computación grid, \href{http://tongdaiao.com.vn/tong-dai-ao-la-su-hien-dien-cua-mot-doanh-nghiep-thanh-cong/}{imagen}}
 		\end{figure}
 	\end{minipage}
@@ -282,16 +282,15 @@ Las unidades de disco físicas son unidades de tipo SCSI aunque se puede utiliza
 
 El mainframe se divide en diversas partes lógicas, cada una puede soportar un sistema operativo.
 Se pueden distribuir los recursos entre las partes lógicas o usar el algoritmo interno de distribución de carga.
-El software que se necesita para un mainframe suele ser muy caro, de hecho a veces un cliente quiere el último mainframe y más lento, para reducir costes software (el software suele ir en función de la potencia).
+El software que se necesita para un mainframe suele ser muy caro, de hecho a veces un cliente quiere el último mainframe y más lento, para reducir costes software (el software suele ir en función de la potencia) \cite{ibm-mainframes}.
 De hecho los mainframes tienen varios procesadores que no conmutan para la potencia en las licencias software, por ejemplo: Integrated Facility for Linux (IFL), zAAP, zIIP, Integrated Coupling Facility (ICF), también tienen procesadores de repuesto, llamados Spare. 
-De hecho se llega a controlar la potencia de los procesadores principales insertando ciclos nulos en la secuencia de instrucciones dl procesador.
+De hecho se llega a controlar la potencia de los procesadores principales insertando ciclos nulos en la secuencia de instrucciones del procesador.
 Cada procesador tiene $8KB$ compartidos para PSA (Prefix Storage Area) y se utiliza para el manejo de interrupciones y de errores.
 
 \
 
 % Clustering on the mainframe: Parallel Sysplex and other techniques
-La más sofisticada de las técnicas de clustering es \href{https://www.ibm.com/support/knowledgecenter/zosbasics/com.ibm.zos.zmainframe/zconc_clusterPlSys.htm?view=embed}{Parallel Sysplex}, permitiendo enlazar hasta 32 servidores con escalabilidad casi lineal. 
-Hay otras técnicas de clustering, entre ellas \href{https://www.ibm.com/support/knowledgecenter/zosbasics/com.ibm.zos.zmainframe/zconc_clusterDASD.htm?view=embed}{Basic shared direct access storage devices (DASD)} y  \href{https://www.ibm.com/support/knowledgecenter/zosbasics/com.ibm.zos.zmainframe/zconc_clusterCTC.htm?view=embed}{Channel-to-channel (CTC) rings}.
+La más sofisticada de las técnicas de clustering es \href{https://www.ibm.com/support/knowledgecenter/zosbasics/com.ibm.zos.zmainframe/zconc_clusterPlSys.htm?view=embed}{Parallel Sysplex}, permitiendo enlazar hasta 32 servidores con escalabilidad casi lineal, pero hay otras técnicas, entre ellas \href{https://www.ibm.com/support/knowledgecenter/zosbasics/com.ibm.zos.zmainframe/zconc_clusterDASD.htm?view=embed}{Basic shared direct access storage devices (DASD)} y  \href{https://www.ibm.com/support/knowledgecenter/zosbasics/com.ibm.zos.zmainframe/zconc_clusterCTC.htm?view=embed}{Channel-to-channel (CTC) rings}.
 
 
 \subsection{Watson}
@@ -310,7 +309,7 @@ Algunas de estas áreas serían búsqueda y recuperación de información (IR), 
 
 La comunicación humana es imperfecta, el lenguaje permite ambigüedades, polisemia, la misma información puede expresarse de varias formas, también tenemos ironías y la interpretación de una frase puede depender de conversaciones anteriores entre los interlocutores.
 Además, dicha comunicación no está estructurada (como en un lenguaje de programación o una base de datos), los datos no siempre están bien definidos y hay información implícita.
-A día de hoy la información no estructurada crece más rápido que la estructurada, por ello es buena idea desarrollar el análisis del lenguaje natural y hacer inferencia a partir de los datos de los que disponemos.
+A día de hoy la información no estructurada crece muy rápido, por ello es buena idea desarrollar el análisis del lenguaje natural y hacer inferencia a partir de los datos de los que disponemos.
 % this-is-watson: word-sense disambiguation [5, 6], latent semantic analysis [7], textual entailment [8], and coreference resolution [9]
 
 \
