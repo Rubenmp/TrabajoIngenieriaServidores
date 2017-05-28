@@ -220,9 +220,51 @@ literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1
 			\item Ironías
 			\item Contexto
 			\item Sin estructura
+			\item Información implícita
 		\end{itemize}
 	\end{block}
 \end{frame}
 
+\begin{frame}{Arquitectura Watson}
+	\begin{block}{ }
+		La base de la arquitectura de Watson es UIMA (Unstructured Information Management Architecture), por encima se desarrollaron DeepQA y AdaptWatson.
+	\end{block}
+	\begin{figure}[H]
+		\centering
+		\label{tiw-deepqa}
+		\includegraphics[width=0.8\textwidth]{./Imagenes/deepQA.png}
+		\caption{Arquitectura DeepQA}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Funcionamiento}
+	\begin{block}{Entendiendo las preguntas}
+		ESG (English Slot Grammar)
+		Generador PAS (predicate-argument structure)
+		
+		Para extraer conocimiento de
+		las fuentes seleccionadas se usa PRISMATIC
+	\end{block}
+\end{frame}
+
+
+\begin{frame}{Preguntas}
+	\begin{exampleblock}{Tipo de respuesta (Dirección)}		
+		Si usted está de pie, es la dirección que debe buscar para ver el revestimiento.
+		
+		Respuesta: Abajo
+	\end{exampleblock}	
+
+	\begin{exampleblock}{Relaciones (Madres e hijos)}
+		Aunque solo les separa un año de vida, ella interpretó a la madre de Colin Farrell en Alexander.
+		Respuesta: Angelina Jolie
+		Relación: protagoniza(ella, Alexander)
+	\end{exampleblock}
+	
+	\begin{exampleblock}{Relaciones implícitas (Antes y después)}
+		La estrella de Jerry Maguire que mantiene automáticamente la velocidad de tu vehículo.
+		Respuesta: Control Tom Cruise
+	\end{exampleblock}
+\end{frame}
 \end{document}
 
