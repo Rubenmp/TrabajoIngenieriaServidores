@@ -123,8 +123,8 @@ literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1
 
 \section{Introducción}
 \begin{frame}{Introducción}
-	\begin{block}{Definición}
-		Un mainframe es lo que las empresas usan para alojar bases de datos comerciales, servidores de transacciones y aplicaciones que requieren un mayor grado de seguridad y disponibilidad de lo que comúnmente se encuentra en máquinas de menor escala.
+	\begin{block}{Mainframe}
+		Un mainframe es aquello que las empresas usan para alojar bases de datos comerciales, servidores de transacciones y aplicaciones que requieren un mayor grado de seguridad y disponibilidad de lo que comúnmente se encuentra en máquinas de menor escala.
 	\end{block}
 
 	\begin{figure}[H]
@@ -170,6 +170,14 @@ literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1
 
 
 \begin{frame}
+	\begin{exampleblock}{Términos}
+		\begin{itemize}
+			\item Servidor
+			\item Granja
+			\item Configuración dinámica
+			\item Plataforma
+		\end{itemize}
+	\end{exampleblock}
 	\begin{block}{Características mainframe}
 		\begin{itemize}
 			\item Altas prestaciones
@@ -180,16 +188,27 @@ literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1
 			\item Varias copias del sistema operativo como un único sistema, o Parallel Sysplex (cluster en UNIX).
 		\end{itemize}
 	\end{block}
-	\begin{exampleblock}{Términos}
-		\begin{itemize}
-			\item Servidor
-			\item Granja
-			\item Configuración dinámica
-			\item Plataforma
-		\end{itemize}
-	\end{exampleblock}
 \end{frame}
 
+\begin{frame}
+	\begin{block}{Hardware}
+		\begin{itemize}
+			\item Procesadores
+			\begin{itemize}
+				\item Central Processor Complex
+				\item Integrated Facility for Linux (IFL)
+				\item zAAP
+				\item zIIP
+				\item Integrated Coupling Facility
+				\item Procesadores de respuesto: Spare
+			\end{itemize}
+
+			\item System Assistance Processor (E/S)
+			\item Disco SCSI
+			
+		\end{itemize}
+	\end{block}
+\end{frame}
 
 \begin{frame}
 	\begin{block}{Ventajas mainframe}
@@ -236,7 +255,7 @@ literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1
 
 \subsection{Estructura}
 \begin{frame}{Arquitectura Watson}
-	\begin{block}{ }
+	\begin{block}{UIMA}
 		La base de la arquitectura de Watson es UIMA (Unstructured Information Management Architecture), por encima se desarrollaron DeepQA y AdaptWatson.
 	\end{block}
 	\begin{figure}[H]
@@ -249,9 +268,10 @@ literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1
 
 \begin{frame}{Funcionamiento}
 	\begin{block}{Entendiendo las preguntas}
-		ESG (English Slot Grammar)
-		Generador PAS (predicate-argument structure)
-		
+		\begin{itemize}
+			\item ESG (English Slot Grammar)
+			\item Generador PAS (predicate-argument structure)
+		\end{itemize}
 		Para extraer conocimiento de
 		las fuentes seleccionadas se usa PRISMATIC
 	\end{block}
@@ -267,12 +287,15 @@ literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1
 
 	\begin{exampleblock}{Relaciones (Madres e hijos)}
 		Aunque solo les separa un año de vida, ella interpretó a la madre de Colin Farrell en Alexander.
+		
 		Respuesta: Angelina Jolie
+		
 		Relación: protagoniza(ella, Alexander)
 	\end{exampleblock}
 	
 	\begin{exampleblock}{Consultas enlazadas}
 		El nombre de este personaje, introducido en 1894, proviene de ”oso” en Hindi.
+		
 		Respuesta: Baloo
 	\end{exampleblock}
 \end{frame}
@@ -297,11 +320,11 @@ literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1
 		\caption{Logo IBM Bluemix}
 	\end{figure}
 
-	\begin{exampleblock}{Uso}
+	\begin{exampleblock}{Posibilidades}
 		\begin{itemize}
 			\item Reconocimiento de lenguaje natural, emociones, imágenes, ...
 			\item Traducción
-			\item conversión de formatos de archivo
+			\item Conversión de formatos de archivo
 			\item Agentes conversacionales
 		\end{itemize}
 	\end{exampleblock}
@@ -312,7 +335,7 @@ literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1
 	\begin{figure}[H]
 		\centering
 		\label{car1.jpg}
-		\includegraphics[width=0.95\textwidth]{./Imagenes/car1.jpeg}
+		\includegraphics[width=0.99\textwidth]{./Imagenes/car1.jpeg}
 		\caption{Agente conversacional para asistir en la conducción (1)}
 	\end{figure}
 \end{frame}
@@ -321,7 +344,7 @@ literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1
 	\begin{figure}[H]
 		\centering
 		\label{car2.jpg}
-		\includegraphics[width=0.95\textwidth]{./Imagenes/car2.jpeg}
+		\includegraphics[width=0.99\textwidth]{./Imagenes/car2.jpeg}
 		\caption{Agente conversacional para asistir en la conducción (2)}
 	\end{figure}
 \end{frame}
@@ -330,7 +353,7 @@ literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1
 	\begin{figure}[H]
 		\centering
 		\label{anger.jpg}
-		\includegraphics[width=0.75\textwidth]{./Imagenes/anger.jpeg}
+		\includegraphics[width=0.99\textwidth]{./Imagenes/anger.jpeg}
 		\caption{Ejemplo de detección de emociones (1)}
 	\end{figure}
 \end{frame}
@@ -339,7 +362,7 @@ literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1
 	\begin{figure}[H]
 		\centering
 		\label{disgust.jpg}
-		\includegraphics[width=0.75\textwidth]{./Imagenes/disgust.jpeg}
+		\includegraphics[width=0.99\textwidth]{./Imagenes/disgust.jpeg}
 		\caption{Ejemplo de detección de emociones (2)}
 	\end{figure}
 \end{frame}
@@ -348,7 +371,7 @@ literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1
 	\begin{figure}[H]
 		\centering
 		\label{sadness.jpg}
-		\includegraphics[width=0.75\textwidth]{./Imagenes/sadness.jpeg}
+		\includegraphics[width=0.99\textwidth]{./Imagenes/sadness.jpeg}
 		\caption{Ejemplo de detección de emociones (3)}
 	\end{figure}
 \end{frame}
